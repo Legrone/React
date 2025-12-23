@@ -1,10 +1,11 @@
-import NavBar from "./components/Navbar";
-import ItemListContainer from "./components/ItemListContainer";
+import NavBar from "./components/Navbar"; 
+import ItemListContainer from "./components/ItemListContainer"; 
 
-export default function App() {
-  return (
-    <div>
-      <NavBar />
-    </div>
-  );
-}
+export default function App() { 
+  return ( 
+  <div> 
+    <NavBar /> 
+    <ItemListContainer/> 
+    </div> );
+    
+  }
