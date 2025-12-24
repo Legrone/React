@@ -1,8 +1,11 @@
-function CartWidget() {
+import { useNavigate } from 'react-router'
+
+
+function CartWidget({text, style}) {
+  const navigate = useNavigate()
   return (
-    <button className="bg-yellow-400 text-black px-4 py-2 rounded-lg hover:bg-yellow-300 flex items-center gap-2">
-      🛒
-      <span>Carrito</span>
+    <button className={style} onClick={() => navigate('/cart')}>
+    {text}
     </button>
   );
 }
