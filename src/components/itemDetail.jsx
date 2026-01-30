@@ -15,7 +15,6 @@ function ItemDetail ({ detail }) {
                     {detail?.description}
                 </p>
                 <ItemCounter product={detail} />
-                <button className="btn btn-primary">Get Started</button>
                 </div>
             </div>
         </div>

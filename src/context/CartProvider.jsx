@@ -26,8 +26,13 @@ function CartProvider ({ children }) {
         return total.toFixed(2)
     }
 
+    const deleteProduct = (id) => {
+        const cartCopy = cart.filter(p => p.id !== id)
+        setCart(cartCopy)
+    }
+
     return (
-        <CartContext.Provider value={{ cart, getQuantity, addToCart, getTotal }}>
+        <CartContext.Provider value={{ cart, getQuantity, addToCart, getTotal, deleteProduct }}>
             {children}
         </CartContext.Provider>
     )

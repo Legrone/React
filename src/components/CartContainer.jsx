@@ -33,7 +33,7 @@ function CartContainer () {
     return (
         <div className='flex flex-col justify-center items-center mt-20 lg:flex-row'>
             <div className='w-11/12 lg:w-1/3 p-3 h-[500px] overflow-y-auto'>
-            {cart.map(prod => <CartItem key={prod.id} name={prod.name} quantity={prod.count} img={prod.url} />)}
+            {cart.map(prod => <CartItem key={prod.id} id={prod.id} name={prod.name} quantity={prod.count} img={prod.url} />)}
         </div>
         <div className='w-11/12 lg:w-1/3 h-[500px] p-3'>
             <p className='text-3xl mb-10'>Total: ${total}</p>
