@@ -1,11 +1,16 @@
 import { useNavigate } from 'react-router'
+import { useContext } from 'react'
+import { CartContext } from '../context/CartContext'
 
 
-function CartWidget({text, style}) {
+function CartWidget({ styles }) {
   const navigate = useNavigate()
+  const { getQuantity } = useContext(CartContext)
+  const total = getQuantity()
+
   return (
-    <button className={style} onClick={() => navigate('/cart')}>
-    {text}
+    <button className={styles} onClick={() => navigate('/cart')}>
+    Cart {total}
     </button>
   );
 }

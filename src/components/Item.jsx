@@ -1,9 +1,14 @@
+import { useNavigate } from "react-router"
+
+
 function Item ({ prod }) {
+    const navigate = useNavigate()
+
     return(
         <div key={prod.id} className="card bg-base-100 w-96 shadow-sm">
           <figure>
             <img
-                src={prod.thumbnail}
+                src={prod.url}
                 alt="test"
                 style={{
                     width: "300px",
@@ -17,7 +22,7 @@ function Item ({ prod }) {
             <p>{prod.description}</p>
 
             <div className="card-actions justify-end">
-              <button className="btn btn-primary">Ver mas</button>
+              <button className="btn btn-primary" onClick={() => navigate(`/item/${prod.id}`)}>Ver mas</button>
             </div>
           </div>
         </div>
