@@ -43,7 +43,7 @@ export const getDetail = async (id) => {
     const docSnap = await getDoc(docRef)
 
     if (docSnap.exists()) {
-        return { ...docSnap.data(), id: doc.id}
+        return { ...docSnap.data(), id: docSnap.id}
     } else {
      console.log("No such document!")
 }
@@ -60,7 +60,7 @@ export const createOrder = async (user, items, total) => {
     try { 
         const docRef = await addDoc(collection(db, "orders"), order)
 
-        console.log("Documento creado con ID: ", docRef.id)
+        return docRef.id
     } catch (error) {
         console.error("Error al agregar documento: ", error)
     }

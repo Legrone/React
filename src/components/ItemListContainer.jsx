@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router'
 import { getProducts, getProductsByCategory } from '../firebase/db'
 import ItemList from './ItemList'
-import { PacmanLoader as Loader } from 'react-spinners'
+import MyLoader from './MyLoader'
 
 function ItemListContainer () { 
   const [items, setItems] = useState([]) 
@@ -16,16 +16,14 @@ function ItemListContainer () {
     getProducts()
       .then(prods => setItems(prods))
     }
+    
   }, [id])
 
   if (!items.length) {
-    return (
-        <div className='flex justify-center h-96 items-center'>
-          <Loader color='yellow' />
-        </div>
-    )
+    return <MyLoader />
   }
 
+  console.log (items)
   return <ItemList items={items}/>
 }
 

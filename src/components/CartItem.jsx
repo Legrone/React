@@ -8,7 +8,7 @@ function CartItem ({ name, quantity, img, id}) {
 
     return (
         <div className='flex justify-around items-center border-b p-3 mb-3'>
-            <img scr={img} alt={name} className='w-10 h-10 rounded-full'/>
+            <img src={img} alt={name} style={{width: "200px", height: "70px",}}/>
             <p>{name} x {quantity}</p>
             <button
             className='bg-red-500 px-5 py-2 rounded cursor-pointer'
